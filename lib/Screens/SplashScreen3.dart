@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myplasticpays/Screens/SplashScreen3.dart';
 
-class SplashScreen2 extends StatelessWidget {
-  const SplashScreen2({Key? key}) : super(key: key);
+class SplashScreen3 extends StatelessWidget {
+  const SplashScreen3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +14,17 @@ class SplashScreen2 extends StatelessWidget {
           Container(
             height: 250,
             width: 250,
-            child: Image.asset("Assets/Winners.gif"),
+            child: Image.asset("Assets/Taking care of the Earth.gif"),
           ),
           SizedBox(height: 40,),
           Padding(
             padding: const EdgeInsets.only(left: 20,right: 20),
-            child: Text("Get your face on the leaderboard !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 25,fontWeight: FontWeight.bold),),
+            child: Text("Add your friends and lets save the earth together !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 25,fontWeight: FontWeight.bold),),
           ),
           SizedBox(height: 20,),
           Padding(
             padding: const EdgeInsets.only(left: 30,right: 30,top: 10),
-            child: Text("get a chance to show up on the leaderboard by depositing more bottles",textAlign: TextAlign.center,style: TextStyle(color: Color(0x86000000),fontSize: 15),),
+            child: Text("add your friends and see who getsa to the leaderboard first",textAlign: TextAlign.center,style: TextStyle(color: Color(0x86000000),fontSize: 15),),
           ),
           SizedBox(height: 40,),
           Padding(
@@ -47,18 +46,18 @@ class SplashScreen2 extends StatelessWidget {
                   width: 10,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0xff1c60ff)
+                      color: Color(0x49000000)
                   ),
-                  child: Text(" .",style: TextStyle(color: Color(0xff1c60ff)),),
+                  child: Text(" .",style: TextStyle(color: Color(0x86000000)),),
                 ),
                 Container(
                   height: 10,
                   width: 10,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0x49000000)
+                      color: Color(0xff1c60ff)
                   ),
-                  child: Text(" .",style: TextStyle(color: Color(0x86000000)),),
+                  child: Text(" .",style: TextStyle(color: Color(0xff1c60ff)),),
                 ),
               ],
             ),
@@ -83,7 +82,7 @@ class SplashScreen2 extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       color: Color(0xff1c60ff),
                     ),
-                    child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>SplashScreen3()));}, child: Text("Next",style: TextStyle(color: Colors.white),))),
+                    child: TextButton(onPressed: (){}, child: Text("Next",style: TextStyle(color: Colors.white),))),
               ],
 
             ),
