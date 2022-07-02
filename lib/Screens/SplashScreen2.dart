@@ -14,16 +14,17 @@ class SplashScreen2 extends StatelessWidget {
           Container(
             height: 250,
             width: 250,
-            child: Image.asset("Assets/Make it rain.gif"),
+            child: Image.asset("Assets/Winners.gif"),
           ),
           SizedBox(height: 40,),
           Padding(
             padding: const EdgeInsets.only(left: 20,right: 20),
-            child: Text("Lets clean the environment and earn awesome rewards !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 25,fontWeight: FontWeight.bold),),
+            child: Text("Get your face on the leaderboard !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 25,fontWeight: FontWeight.bold),),
           ),
+          SizedBox(height: 20,),
           Padding(
-            padding: const EdgeInsets.only(left: 50,right: 50,top: 10),
-            child: Text("win lots of rewards just by depositing plastic bottles",textAlign: TextAlign.center,style: TextStyle(color: Color(0x86000000),fontSize: 15),),
+            padding: const EdgeInsets.only(left: 30,right: 30,top: 10),
+            child: Text("get a chance to show up on the leaderboard by depositing more bottles",textAlign: TextAlign.center,style: TextStyle(color: Color(0x86000000),fontSize: 15),),
           ),
           SizedBox(height: 40,),
           Padding(
@@ -36,18 +37,18 @@ class SplashScreen2 extends StatelessWidget {
                   width: 10,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0xff1c60ff)
+                      color: Color(0x49000000)
                   ),
-                  child: Text(" .",style: TextStyle(color: Color(0xff1c60ff)),),
+                  child: Text(" .",style: TextStyle(color: Color(0x86000000)),),
                 ),
                 Container(
                   height: 10,
                   width: 10,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Color(0x49000000)
+                      color: Color(0xff1c60ff)
                   ),
-                  child: Text(" .",style: TextStyle(color: Color(0x86000000)),),
+                  child: Text(" .",style: TextStyle(color: Color(0xff1c60ff)),),
                 ),
                 Container(
                   height: 10,
