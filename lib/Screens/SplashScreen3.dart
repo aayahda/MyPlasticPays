@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myplasticpays/Screens/RegistrationScreen.dart';
 
 class SplashScreen3 extends StatelessWidget {
   const SplashScreen3({Key? key}) : super(key: key);
@@ -82,7 +83,7 @@ class SplashScreen3 extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       color: Color(0xff1c60ff),
                     ),
-                    child: TextButton(onPressed: (){}, child: Text("Next",style: TextStyle(color: Colors.white),))),
+                    child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));}, child: Text("Next",style: TextStyle(color: Colors.white),))),
               ],
 
             ),
