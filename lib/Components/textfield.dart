@@ -14,7 +14,7 @@ class TextInpField extends StatelessWidget {
           color: Color(0xffF5F6F8),
           borderRadius: BorderRadius.circular(15)),
       child: Padding(
-        padding: const EdgeInsets.only(left: 10),
+        padding: const EdgeInsets.only(left: 15),
         child: TextFormField(
           obscureText: obscure,
           keyboardType: keyboard,
