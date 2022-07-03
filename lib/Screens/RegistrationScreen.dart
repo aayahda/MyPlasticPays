@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:myplasticpays/Components/textfield.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -19,69 +21,11 @@ class RegistrationScreen extends StatelessWidget {
             ),
             Text("Create an account so you can redeem your rewards ",style: TextStyle(color: Colors.black54),),
             SizedBox(height: 35,),
-            Container(
-              decoration: BoxDecoration(
-                  color: Color(0xffF5F6F8),
-                  borderRadius: BorderRadius.circular(15)),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: TextFormField(
-                  cursorColor: Color(0xff1c60ff),
-                  decoration: InputDecoration(
-                    hintStyle: TextStyle(
-                      color: Colors.black54,
-                    ),
-                    hintText: 'Username',
-                    border: InputBorder.none,
-
-
-                  ),
-                ),
-              ),
-            ),
+            TextInpField("Username", TextInputType.none, false),
             SizedBox(height: 15,),
-            Container(
-              decoration: BoxDecoration(
-                  color: Color(0xffF5F6F8),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: TextFormField(
-                  keyboardType: TextInputType.emailAddress,
-                  cursorColor: Color(0xff1c60ff),
-                  decoration: InputDecoration(
-                    hintStyle: TextStyle(
-                      color: Colors.black54,
-                    ),
-                    hintText: 'Email',
-                    border: InputBorder.none,
-
-
-                  ),
-                ),
-              ),
-            ),
+            TextInpField("Email", TextInputType.emailAddress, false),
             SizedBox(height: 15,),
-            Container(
-              decoration: BoxDecoration(
-                  color: Color(0xffF5F6F8),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: TextFormField(
-                  cursorColor: Color(0xff1c60ff),
-                  decoration: InputDecoration(
-                    hintStyle: TextStyle(
-                      color: Colors.black54,
-                    ),
-                    hintText: 'Password',
-                    border: InputBorder.none,
-
-
-                  ),
-                ),
-              ),
-            ),
+            TextInpField("Password", TextInputType.none, true),
             SizedBox(height: 100,),
             SizedBox(
               child: Center(
@@ -100,6 +44,30 @@ class RegistrationScreen extends StatelessWidget {
                     child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));}, child: Text("Create Account",style: TextStyle(color: Colors.white),))),
               ),
             ),
+            SizedBox(height: 80,),
+            Container(
+                padding: EdgeInsets.all(10),
+                child: Center(
+                  child: RichText(
+                    text: TextSpan(
+                        text: 'Already have an account?',
+                        style: TextStyle(
+                            color: Colors.black, fontSize: 13),
+                        children: <TextSpan>[
+                          TextSpan(text: ' Login',
+                              style: TextStyle(
+                                  color: Colors.blueAccent, fontSize: 13),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  // navigate to desired screen
+                                }
+                          )
+                        ]
+                    ),
+                  ),
+                )
+            )
+
 
 
           ],
