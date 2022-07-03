@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../Components/textfield.dart';
+import 'MainScreen.dart';
 import 'RegistrationScreen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -41,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       color: Color(0xff1c60ff),
                     ),
-                    child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));}, child: Text("Login",style: TextStyle(color: Colors.white),))),
+                    child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));}, child: Text("Login",style: TextStyle(color: Colors.white),))),
               ),
             ),
             SizedBox(height: 140,),

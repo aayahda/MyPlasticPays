@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myplasticpays/Screens/BinLocation.dart';
+import 'package:myplasticpays/Screens/Leaderboard.dart';
+import 'package:myplasticpays/Screens/PortfolioScreen.dart';
+import 'package:myplasticpays/Screens/QRScreen.dart';
+import 'package:myplasticpays/Screens/RewardsScreen.dart';
 
 
 class MainScreen extends StatefulWidget {
-  MainScreen({required this.profilename,required this.token,required this.pageindex});
-  late String profilename;
-  late String token;
-  int pageindex;
 
 
   @override
@@ -18,15 +19,21 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
     pageList=<Widget>[
+      BinLocation(),
+      Leaderboard(),
+      QRScreen(),
+      RewardsScreen(),
+      PortfolioScreen(),
+
       ];
   }
 
-  // int pageIndex=0;
+  int currentIndex=4;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pageList[widget.pageindex],
+      body: pageList[currentIndex],
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -42,21 +49,31 @@ class _MainScreenState extends State<MainScreen> {
           ),
           child: BottomNavigationBar(
             elevation: 10,
+            selectedItemColor: Color(0xff1c60ff),
             showSelectedLabels: false,
             showUnselectedLabels: false,
-            currentIndex: widget.pageindex,
-            onTap: (value){
+            currentIndex: currentIndex,
+            onTap: (index){
               setState((){
-                widget.pageindex=value;
-
+                currentIndex=index;
               });
             },
+            iconSize: 30,
             type: BottomNavigationBarType.fixed,
-            items: const [
-              BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: "Home",),
+            items:  [
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.location_solid), label: "Home",),
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.rosette), label: "Home",),
               BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.creditcard), label: "Wallet",),
-              BottomNavigationBarItem(icon: Icon(CupertinoIcons.list_dash), label: "Menu"),
+                icon: Container(
+                    height: 45,
+                    width: 45,
+                    decoration: BoxDecoration(
+                        color: Color(0xff1c60ff),
+                      borderRadius: BorderRadius.circular(30)
+                    ),
+                    child: Center(child: Icon(CupertinoIcons.qrcode_viewfinder,color: Colors.white,))), label: "QR",),
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.money_dollar_circle_fill), label: "Rewards"),
+              BottomNavigationBarItem(icon: Icon(CupertinoIcons.person_crop_circle_fill), label: "Portfolio",),
             ],
           ),
         ),

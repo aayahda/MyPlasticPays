@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myplasticpays/Components/textfield.dart';
 
 import 'LoginScreen.dart';
+import 'MainScreen.dart';
 
 class RegistrationScreen extends StatelessWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -43,7 +44,7 @@ class RegistrationScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       color: Color(0xff1c60ff),
                     ),
-                    child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));}, child: Text("Create Account",style: TextStyle(color: Colors.white),))),
+                    child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));}, child: Text("Create Account",style: TextStyle(color: Colors.white),))),
               ),
             ),
             SizedBox(height: 80,),
