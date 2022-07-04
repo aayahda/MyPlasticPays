@@ -18,8 +18,8 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
           SizedBox(height: 60,),
           Center(
             child: Container(
-              height: 150,
-              width: 150,
+              height: 130,
+              width: 130,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(80),
                 gradient: LinearGradient(
@@ -29,7 +29,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: CircleAvatar(
-                  radius: 65,
+                  radius: 50,
                   backgroundImage: AssetImage('Assets/Akr.jpeg'),
                 ),
               ),
@@ -51,21 +51,21 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                   children: [
                     Text("Level",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black87),),
                     SizedBox(height: 10,),
-                    Text("1",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),)
+                    Text("1",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)
                   ],
                 ),
                 Column(
                   children: [
                     Text("Balance",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black87),),
                     SizedBox(height: 10,),
-                    Text("30",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),)
+                    Text("30",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)
                   ],
                 ),
                 Column(
                   children: [
                     Text("Rank",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black87),),
                     SizedBox(height: 10,),
-                    Text("121",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),)
+                    Text("121",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)
                   ],
                 ),
               ],
