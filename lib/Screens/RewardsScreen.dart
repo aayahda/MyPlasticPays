@@ -75,12 +75,32 @@ class _RewardsScreenState extends State<RewardsScreen> {
                 ],
               ),
             ),)),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           Expanded(
-            child: ListView(
-              children: [
-                Container(height: 40,child: Text("Hello"),)
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
+              child: ListView(
+                children: [
+                  Container(height: 70,width:double.infinity,decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)),color: Color(0xffFAF4FF)),
+                    child:Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Text("4"),
+                          Padding(
+                            padding: const EdgeInsets.only(left:12,right: 12),
+                            child: CircleAvatar(radius: 30,),
+                          ),
+                          Expanded(child:Text("Name")),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text("869"),
+                          )
+                        ],
+                      ),
+                    ))
+                ],
+              ),
             ),
           )
         ],
