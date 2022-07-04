@@ -33,11 +33,11 @@ class _RewardsScreenState extends State<RewardsScreen> {
                               padding: const EdgeInsets.all(8.0),
                               child: CircleAvatar(
                                 radius: 40,
-                                backgroundImage: AssetImage('Assets/Akr.jpeg'),
+                                backgroundImage: AssetImage('Assets/Amal.jpeg'),
                               ),
                             ),
                             Text("2001",style: TextStyle(color: Colors.white),),
-                            Text("Ross",style: TextStyle(color: Colors.white),)
+                            Text("Amal420",style: TextStyle(color: Colors.white),)
                           ],
                         ),
                         Column(
@@ -47,11 +47,11 @@ class _RewardsScreenState extends State<RewardsScreen> {
                               padding: const EdgeInsets.all(8.0),
                               child: CircleAvatar(
                                 radius: 50,
-                                backgroundImage: AssetImage('Assets/Akr.jpeg'),
+                                backgroundImage: AssetImage('Assets/Dheeru.jpeg'),
                               ),
                             ),
                             Text("3897",style: TextStyle(color: Colors.white),),
-                            Text("Monica",style: TextStyle(color: Colors.white),)
+                            Text("Dheeru21",style: TextStyle(color: Colors.white),)
                           ],
                         ),
                         Column(
@@ -65,7 +65,7 @@ class _RewardsScreenState extends State<RewardsScreen> {
                               ),
                             ),
                             Text("1123",style: TextStyle(color: Colors.white),),
-                            Text("Chandler",style: TextStyle(color: Colors.white),)
+                            Text("Aadhya",style: TextStyle(color: Colors.white),)
                           ],
                         ),
                       ],
