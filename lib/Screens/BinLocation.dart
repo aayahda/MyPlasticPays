@@ -37,7 +37,7 @@ class _BinLocationState extends State<BinLocation> {
                   color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(15)),
                   boxShadow: kElevationToShadow[9],
                 ),
-              child: Image.asset("Assets/Amal.jpeg"),
+              child: Image.asset("Assets/starbucks.jpeg"),
             ),
           ],
 
