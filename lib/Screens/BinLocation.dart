@@ -39,6 +39,11 @@ class _BinLocationState extends State<BinLocation> {
                 ),
               child: Image.asset("Assets/starbucks.jpeg"),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left:10,top: 25),
+              child: Text("Locate the bin ! ",style:TextStyle(fontStyle: FontStyle.italic,color: Colors.black45)),
+            ),
+
           ],
 
         ),

@@ -13,7 +13,10 @@ class _LeaderboardState extends State<Leaderboard> {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(child: Container(decoration:BoxDecoration(color: Color(0xff3609AE),borderRadius: BorderRadius.only(bottomLeft: Radius.circular(70),bottomRight: Radius.circular(70))),width: double.infinity,height:double.infinity,
+          Expanded(child: Container(decoration:BoxDecoration( gradient: LinearGradient(
+      begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xff2E21AC), Color(0xff171717),]),borderRadius: BorderRadius.only(bottomLeft: Radius.circular(70),bottomRight: Radius.circular(70))),width: double.infinity,height:double.infinity,
             child: Padding(
               padding: const EdgeInsets.only(top:40),
               child: Column(
@@ -77,7 +80,7 @@ class _LeaderboardState extends State<Leaderboard> {
           SizedBox(height: 10,),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
+              padding: const EdgeInsets.only(left: 35,right: 35,top: 10,bottom: 10),
               child: ListView(
                 children: [
                   Container(height: 70,width:double.infinity,decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15)),color: Color(0xffFAF4FF)),
