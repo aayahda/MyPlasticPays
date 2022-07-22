@@ -13,23 +13,23 @@ class RegistrationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.only(top:15,left: 25,right: 25),
+        padding: const EdgeInsets.only(top:15,left: 35,right: 35),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 80,),
-            Text("Create New Account",style: TextStyle(color:Color(0xff1c60ff),fontSize: 25,fontWeight: FontWeight.bold),),
+            SizedBox(height: 120,),
+            Text("Create New Account",style: TextStyle(color:Color(0xff1c60ff),fontSize: 27,fontWeight: FontWeight.bold),),
             SizedBox(
               height: 10,
             ),
-            Text("Create an account so you can redeem your rewards ",style: TextStyle(color: Colors.black54),),
+            Text("Create an account so you can redeem your rewards ",style: TextStyle(color: Colors.black54,fontSize: 17),),
             SizedBox(height: 35,),
             TextInpField("Username", TextInputType.none, false),
             SizedBox(height: 15,),
             TextInpField("Email", TextInputType.emailAddress, false),
             SizedBox(height: 15,),
             TextInpField("Password", TextInputType.none, true),
-            SizedBox(height: 100,),
+            SizedBox(height: 140,),
             SizedBox(
               child: Center(
                 child: Container(
@@ -47,7 +47,7 @@ class RegistrationScreen extends StatelessWidget {
                     child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));}, child: Text("Create Account",style: TextStyle(color: Colors.white),))),
               ),
             ),
-            SizedBox(height: 80,),
+            SizedBox(height: 140,),
             Container(
                 padding: EdgeInsets.all(10),
                 child: Center(
@@ -55,11 +55,11 @@ class RegistrationScreen extends StatelessWidget {
                     text: TextSpan(
                         text: 'Already have an account?',
                         style: TextStyle(
-                            color: Colors.black, fontSize: 12),
+                            color: Colors.black, fontSize: 14),
                         children: <TextSpan>[
                           TextSpan(text: ' Login',
                               style: TextStyle(
-                                  color: Colors.blueAccent, fontSize: 12),
+                                  color: Colors.blueAccent, fontSize: 14),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));

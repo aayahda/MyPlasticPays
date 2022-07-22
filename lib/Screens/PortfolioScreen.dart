@@ -15,7 +15,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 60,),
+          SizedBox(height: 130,),
           Center(
             child: Container(
               height: 130,

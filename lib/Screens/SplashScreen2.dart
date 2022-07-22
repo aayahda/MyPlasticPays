@@ -11,23 +11,22 @@ class SplashScreen2 extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 70,),
+          SizedBox(height: 150,),
           Container(
-            height: 250,
-            width: 250,
+            height: 280,
+            width: 280,
             child: Image.asset("Assets/Winners.gif"),
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: 80,),
           Padding(
             padding: const EdgeInsets.only(left: 20,right: 20),
-            child: Text("Get your face on the leaderboard !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 25,fontWeight: FontWeight.bold),),
+            child: Text("Get your face on the leaderboard !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 30,fontWeight: FontWeight.bold),),
           ),
-          SizedBox(height: 20,),
           Padding(
-            padding: const EdgeInsets.only(left: 30,right: 30,top: 10),
-            child: Text("get a chance to show up on the leaderboard by depositing more bottles",textAlign: TextAlign.center,style: TextStyle(color: Color(0x86000000),fontSize: 15),),
+            padding: const EdgeInsets.only(left: 30,right: 30,top: 15),
+            child: Text("get a chance to show up on the leaderboard by depositing more bottles",textAlign: TextAlign.center,style: TextStyle(color: Color(0x86000000),fontSize: 17),),
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: 90,),
           Padding(
             padding: const EdgeInsets.only(left: 140,right: 140),
             child: Row(
@@ -63,7 +62,7 @@ class SplashScreen2 extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: 60,),
           Padding(
             padding: const EdgeInsets.only(right: 40,left: 40),
             child: Row(

@@ -11,22 +11,22 @@ class SplashScreen1 extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 70,),
+          SizedBox(height: 150,),
           Container(
-            height: 250,
-            width: 250,
+            height: 280,
+            width: 280,
             child: Image.asset("Assets/Make it rain.gif"),
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: 80,),
           Padding(
-            padding: const EdgeInsets.only(left: 20,right: 20),
-            child: Text("Lets clean the environment and earn awesome rewards !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 25,fontWeight: FontWeight.bold),),
+            padding: const EdgeInsets.only(left: 45,right: 45),
+            child: Text("Lets clean the environment and earn awesome rewards !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 30,fontWeight: FontWeight.bold),),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 50,right: 50,top: 10),
-            child: Text("win lots of rewards just by depositing plastic bottles",textAlign: TextAlign.center,style: TextStyle(color: Color(0x86000000),fontSize: 15),),
+            padding: const EdgeInsets.only(left: 50,right: 50,top: 15),
+            child: Text("win lots of rewards just by depositing plastic bottles",textAlign: TextAlign.center,style: TextStyle(color: Color(0x86000000),fontSize: 17),),
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: 60,),
           Padding(
             padding: const EdgeInsets.only(left: 140,right: 140),
             child: Row(
@@ -62,7 +62,7 @@ class SplashScreen1 extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: 60,),
           Padding(
             padding: const EdgeInsets.only(right: 40,left: 40),
             child: Row(

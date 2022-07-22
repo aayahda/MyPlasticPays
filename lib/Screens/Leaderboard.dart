@@ -18,7 +18,7 @@ class _LeaderboardState extends State<Leaderboard> {
           end: Alignment.bottomRight,
           colors: [Color(0xff2E21AC), Color(0xff171717),]),borderRadius: BorderRadius.only(bottomLeft: Radius.circular(70),bottomRight: Radius.circular(70))),width: double.infinity,height:double.infinity,
             child: Padding(
-              padding: const EdgeInsets.only(top:40),
+              padding: const EdgeInsets.only(top:70),
               child: Column(
                 children: [
                   Text("LEADERBOARD",style: TextStyle(fontWeight: FontWeight.w200,fontSize: 25,color: Colors.white),),
