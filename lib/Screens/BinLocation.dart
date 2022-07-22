@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -9,6 +10,31 @@ class BinLocation extends StatefulWidget {
 }
 
 class _BinLocationState extends State<BinLocation> {
+  Set <Marker> _markers ={};
+
+  void _onMapCreated(GoogleMapController controller){
+    setState((){
+      _markers.add(
+        Marker(markerId: MarkerId("1"),
+        position: LatLng(10.5544976,76.2232729),
+            icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueCyan)
+        ));
+          _markers.add(
+          Marker(markerId: MarkerId("2"),
+      position: LatLng(10.5551598,76.2240561),
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueCyan)
+      ),
+      );
+      _markers.add(
+        Marker(markerId: MarkerId("3"),
+            position: LatLng(10.5555751,76.2245011),
+            icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueCyan)
+        ),
+      );
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,9 +74,16 @@ class _BinLocationState extends State<BinLocation> {
               padding: const EdgeInsets.all(10.0),
               child: Container(
                 height: 400,
-                child: GoogleMap(initialCameraPosition:CameraPosition(
+                decoration: BoxDecoration(
+                  color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(15)),
+                  boxShadow: kElevationToShadow[9],
+                ),
+                child: GoogleMap(
+                  onMapCreated: _onMapCreated,
+                  markers: _markers,
+                  initialCameraPosition:CameraPosition(
                   target: LatLng(10.5544976,76.2232729),
-                  zoom: 18,
+                  zoom: 16,
                 ),
 
                 ),
