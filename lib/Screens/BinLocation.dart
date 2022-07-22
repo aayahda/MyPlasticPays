@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class BinLocation extends StatefulWidget {
   const BinLocation({Key? key}) : super(key: key);
@@ -43,6 +44,18 @@ class _BinLocationState extends State<BinLocation> {
               padding: const EdgeInsets.only(left:10,top: 25),
               child: Text("Locate the bin ! ",style:TextStyle(fontStyle: FontStyle.italic,color: Colors.black45)),
             ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 400,
+                child: GoogleMap(initialCameraPosition:CameraPosition(
+                  target: LatLng(10.5544976,76.2232729),
+                  zoom: 18,
+                ),
+
+                ),
+              ),
+            )
 
           ],
 
