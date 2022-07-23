@@ -24,11 +24,11 @@ class RegistrationScreen extends StatelessWidget {
             ),
             Text("Create an account so you can redeem your rewards ",style: TextStyle(color: Colors.black54,fontSize: 17),),
             SizedBox(height: 35,),
-            TextInpField("Username", TextInputType.none, false),
+            TextInpField("Username", TextInputType.text, false),
             SizedBox(height: 15,),
             TextInpField("Email", TextInputType.emailAddress, false),
             SizedBox(height: 15,),
-            TextInpField("Password", TextInputType.none, true),
+            TextInpField("Password", TextInputType.text, true),
             SizedBox(height: 140,),
             SizedBox(
               child: Center(

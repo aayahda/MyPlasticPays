@@ -22,7 +22,7 @@ class _LeaderboardState extends State<Leaderboard> {
               child: Column(
                 children: [
                   Text("LEADERBOARD",style: TextStyle(fontWeight: FontWeight.w200,fontSize: 25,color: Colors.white),),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 20,),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
