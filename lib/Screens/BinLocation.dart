@@ -59,7 +59,7 @@ class _BinLocationState extends State<BinLocation> {
               child: Text("This week's reward is sponsored by ",style:TextStyle(fontStyle: FontStyle.italic,color: Colors.black45)),
             ),
             Container(margin: EdgeInsets.all(10),
-                height: 120,width: double.infinity,
+                height: 100,width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(15)),
                   boxShadow: kElevationToShadow[9],

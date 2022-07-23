@@ -11,7 +11,7 @@ class SplashScreen1 extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 150,),
+          SizedBox(height: 100,),
           Container(
             height: 280,
             width: 280,
@@ -19,7 +19,7 @@ class SplashScreen1 extends StatelessWidget {
           ),
           SizedBox(height: 80,),
           Padding(
-            padding: const EdgeInsets.only(left: 45,right: 45),
+            padding: const EdgeInsets.only(left: 35,right: 35),
             child: Text("Lets clean the environment and earn awesome rewards !",textAlign:TextAlign.center,style: TextStyle(color:Color(0xff1c60ff),fontSize: 30,fontWeight: FontWeight.bold),),
           ),
           Padding(
