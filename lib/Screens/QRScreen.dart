@@ -75,13 +75,33 @@ class _QRScreenState extends State<QRScreen> {
                        ),
                        child: Text("REDEEM NOW"),
                        onPressed: (){
-                         Navigator.push(context, MaterialPageRoute(builder: (context)=>RewardsScreen()));
+                         showDialog(context: context, builder:(context) {
+                           return Padding(
+                             padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 270),
+                             child: AlertDialog(
+                               shape: RoundedRectangleBorder(
+                                 borderRadius: BorderRadius.circular(30)
+                               ),
+                             title: Center(child: Text("Congratulations",
+                                 style: TextStyle(fontSize: 15,
+                                     fontWeight: FontWeight.bold),)),
+                               content: Column(
+                                 children: [
+                                   Container(
+                                     width: 100,
+                                     height: 100,
+                                     child:Image.asset("Assets/surprise.png"),
+                                   ),
+                                   SizedBox(height: 50),
+                                   Text("You have won 30 points",style: TextStyle(fontSize: 14,color: Colors.black38),)
+                                 ],
+                               ),
+                         ),
+                           );
+                        // Navigator.push(context, MaterialPageRoute(builder: (context)=>RewardsScreen()));
 
-                       },
-
-
-                     ),
-                   )
+                       },);}
+                   ),)
                   //   Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));
                     // Text(
                     //     'Barcode Type: ${describeEnum(
@@ -241,3 +261,89 @@ class _QRScreenState extends State<QRScreen> {
     super.dispose();
   }
 }
+
+// GestureDetector(
+// onTap: () {
+// showDialog(
+// context: context,
+// builder: (context) {
+// return AlertDialog(
+// shape: RoundedRectangleBorder(
+// borderRadius:
+// BorderRadius.circular(10)),
+// title: const Center(
+// child: Text(
+// "Logout",
+// style: TextStyle(
+// fontSize: 15,
+// fontWeight: FontWeight.bold),
+// )),
+// content: Container(
+// height:
+// getProportionateScreenHeight(60),
+// child: Text(
+// "Are you sure you want to logout from the app?",
+// textAlign: TextAlign.center,
+// )),
+// actions: [
+// Row(
+// mainAxisAlignment:
+// MainAxisAlignment.spaceBetween,
+// children: [
+// Container(
+// width: 135,
+// height: 40,
+// decoration: BoxDecoration(
+// color: Color(0xff0063F5),
+// borderRadius:
+// BorderRadius.circular(5)),
+// child: TextButton(
+// onPressed: () {
+// Navigator.pop(context);
+// },
+// child: Text(
+// "No",
+// style: TextStyle(
+// color: Colors.white),
+// ))),
+// Container(
+// width: 135,
+// height: 40,
+// decoration: BoxDecoration(
+// color: Colors.red,
+// borderRadius:
+// BorderRadius.circular(5)),
+// child: TextButton(
+// onPressed: () async {
+// print("logg");
+// final prefs =
+// await SharedPreferences
+//     .getInstance();
+// final success = await prefs
+//     .remove('token');
+// final success2 = await prefs
+//     .remove('username');
+// final success3 = await prefs
+//     .remove('phone');
+//
+// //go to login screen
+// Navigator
+//     .pushAndRemoveUntil(
+// context,
+// MaterialPageRoute(
+// builder: (context) =>
+// WelcomeScreen(),
+// ),
+// (route) => false);
+// },
+// child: Text(
+// "Yes",
+// style: TextStyle(
+// color: Colors.white),
+// )))
+// ],
+// )
+// ],
+// );
+// });
+//},
