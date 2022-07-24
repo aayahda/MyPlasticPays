@@ -17,17 +17,17 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 80,),
-            Text("Welcome back!",style: TextStyle(color:Color(0xff1c60ff),fontSize: 25,fontWeight: FontWeight.bold),),
+            SizedBox(height: 120,),
+            Text("Welcome back!",style: TextStyle(color:Color(0xff1c60ff),fontSize: 27,fontWeight: FontWeight.bold),),
             SizedBox(
               height: 10,
             ),
-            Text("We're super excited to have you on board!\n Login to track your progress",style: TextStyle(color: Colors.black54),),
+            Text("We're super excited to have you on board!\n Login to track your progress",style: TextStyle(color: Colors.black54,fontSize: 17),),
             SizedBox(height: 35,),
             TextInpField("Email", TextInputType.emailAddress, false),
             SizedBox(height: 15,),
-            TextInpField("Password", TextInputType.none, true),
-            SizedBox(height: 100,),
+            TextInpField("Password", TextInputType.text, true),
+            SizedBox(height: 200,),
             SizedBox(
               child: Center(
                 child: Container(
@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                     child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));}, child: Text("Login",style: TextStyle(color: Colors.white),))),
               ),
             ),
-            SizedBox(height: 140,),
+            SizedBox(height: 160,),
             Container(
                 padding: EdgeInsets.all(10),
                 child: Center(
@@ -53,11 +53,11 @@ class LoginScreen extends StatelessWidget {
                     text: TextSpan(
                         text: "Don't have an account?",
                         style: TextStyle(
-                            color: Colors.black, fontSize: 12),
+                            color: Colors.black, fontSize: 14),
                         children: <TextSpan>[
                           TextSpan(text: ' Register',
                               style: TextStyle(
-                                  color: Colors.blueAccent, fontSize: 12),
+                                  color: Colors.blueAccent, fontSize: 14),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.pop(context);
