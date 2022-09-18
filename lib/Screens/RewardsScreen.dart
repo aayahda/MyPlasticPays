@@ -43,7 +43,7 @@ class _RewardsScreenState extends State<RewardsScreen> {
                       padding: const EdgeInsets.only(left: 15,right: 15),
                       child: Row(
                         children: [
-                          Container(height: 80,width: 80,decoration: BoxDecoration(color: Colors.black,borderRadius: BorderRadius.all(Radius.circular(10))),
+                          Container(height: 80,width: 80,decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(10))),
                             child: Image.asset("Assets/Mcd.png"),
                           ),
                           Expanded(
@@ -100,8 +100,8 @@ class _RewardsScreenState extends State<RewardsScreen> {
                         padding: const EdgeInsets.only(left: 15,right: 15),
                         child: Row(
                           children: [
-                            Container(height: 80,width: 80,decoration: BoxDecoration(color: Colors.black,borderRadius: BorderRadius.all(Radius.circular(10))),
-                              child: Image.asset("Assets/Mcd.png"),
+                            Container(height: 80,width: 80,decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(10))),
+                              child: Image.asset("Assets/Swiggy.webp"),
                             ),
                             Expanded(
                               child: Padding(
@@ -110,10 +110,10 @@ class _RewardsScreenState extends State<RewardsScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("McDonalds"),
+                                    Text("Swiggy"),
                                     Expanded(
                                       child: RichText(
-                                        text: TextSpan(text:"10%",style: TextStyle(color: Colors.black,fontSize: 40,fontWeight: FontWeight.w600),
+                                        text: TextSpan(text:"40%",style: TextStyle(color: Colors.black,fontSize: 40,fontWeight: FontWeight.w600),
                                             children: <TextSpan>[
                                               TextSpan(text: ' OFF',
                                                 style: TextStyle(
@@ -137,7 +137,7 @@ class _RewardsScreenState extends State<RewardsScreen> {
                             Padding(
                               padding: const EdgeInsets.only(left: 10,right: 10,top: 25,bottom: 25),
                               child: Column(
-                                children: [Text("80",style: TextStyle(fontSize: 35,fontWeight: FontWeight.w600),),Text("Points")],
+                                children: [Text("50",style: TextStyle(fontSize: 35,fontWeight: FontWeight.w600),),Text("Points")],
                               ),
                             )
 
@@ -157,8 +157,8 @@ class _RewardsScreenState extends State<RewardsScreen> {
                         padding: const EdgeInsets.only(left: 15,right: 15),
                         child: Row(
                           children: [
-                            Container(height: 80,width: 80,decoration: BoxDecoration(color: Colors.black,borderRadius: BorderRadius.all(Radius.circular(10))),
-                              child: Image.asset("Assets/Mcd.png"),
+                            Container(height: 80,width: 80,decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(10))),
+                              child: Image.asset("Assets/Dominos.png"),
                             ),
                             Expanded(
                               child: Padding(
@@ -167,10 +167,10 @@ class _RewardsScreenState extends State<RewardsScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("McDonalds"),
+                                    Text("Dominos"),
                                     Expanded(
                                       child: RichText(
-                                        text: TextSpan(text:"10%",style: TextStyle(color: Colors.black,fontSize: 40,fontWeight: FontWeight.w600),
+                                        text: TextSpan(text:"5%",style: TextStyle(color: Colors.black,fontSize: 40,fontWeight: FontWeight.w600),
                                             children: <TextSpan>[
                                               TextSpan(text: ' OFF',
                                                 style: TextStyle(
@@ -194,7 +194,7 @@ class _RewardsScreenState extends State<RewardsScreen> {
                             Padding(
                               padding: const EdgeInsets.only(left: 10,right: 10,top: 25,bottom: 25),
                               child: Column(
-                                children: [Text("80",style: TextStyle(fontSize: 35,fontWeight: FontWeight.w600),),Text("Points")],
+                                children: [Text("30",style: TextStyle(fontSize: 35,fontWeight: FontWeight.w600),),Text("Points")],
                               ),
                             )
 

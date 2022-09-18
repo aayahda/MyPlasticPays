@@ -38,7 +38,7 @@ class _LeaderboardState extends State<Leaderboard> {
                                 backgroundImage: AssetImage('Assets/Amal.jpeg'),
                               ),
                             ),
-                            Text("2001",style: TextStyle(color: Colors.white),),
+                            Text("80",style: TextStyle(color: Colors.white),),
                             Text("Amal420",style: TextStyle(color: Colors.white),)
                           ],
                         ),
@@ -52,7 +52,7 @@ class _LeaderboardState extends State<Leaderboard> {
                                 backgroundImage: AssetImage('Assets/Dheeru.jpeg'),
                               ),
                             ),
-                            Text("3897",style: TextStyle(color: Colors.white),),
+                            Text("100",style: TextStyle(color: Colors.white),),
                             Text("Dheeru21",style: TextStyle(color: Colors.white),)
                           ],
                         ),
@@ -66,7 +66,7 @@ class _LeaderboardState extends State<Leaderboard> {
                                 backgroundImage: AssetImage('Assets/Akr.jpeg'),
                               ),
                             ),
-                            Text("1123",style: TextStyle(color: Colors.white),),
+                            Text("30",style: TextStyle(color: Colors.white),),
                             Text("Aadhya",style: TextStyle(color: Colors.white),)
                           ],
                         ),

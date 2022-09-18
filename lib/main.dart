@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:myplasticpays/Screens/Onboarding.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'Screens/QRScreen.dart';
-import 'Screens/SplashScreen1.dart';
-import 'Screens/MainScreen.dart';
+import 'Screens/LoginScreen.dart';
+Future main() async{
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() => runApp(const MyApp());
+  final prefs =await SharedPreferences.getInstance();
+  final showHome = prefs.getBool('showHome')??false;
 
+  runApp(MyApp(showHome:showHome));
+
+}
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final bool showHome;
+  const MyApp({Key?key,required this.showHome,}):super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreen1(),
+      home: showHome?LoginScreen(): OnboardingScreen(),
     );
   }
 }
