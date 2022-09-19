@@ -18,6 +18,7 @@ class TextInpField extends StatelessWidget {
         padding: const EdgeInsets.only(left: 15),
         child: Center(
           child: TextFormField(
+            // controller: ,
             obscureText: obscure,
             keyboardType: keyboard,
             cursorColor: Color(0xff1c60ff),
@@ -25,9 +26,8 @@ class TextInpField extends StatelessWidget {
               hintStyle: TextStyle(
                 color: Colors.black54,
               ),
-              hintText: hint,
+              label: Text(hint),
               border: InputBorder.none,
-
 
             ),
           ),

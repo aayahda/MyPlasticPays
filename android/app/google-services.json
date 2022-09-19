@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "929019053170",
+    "project_id": "myplasticpays",
+    "storage_bucket": "myplasticpays.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929019053170:android:31b9e5e73438cc85396eeb",
+        "android_client_info": {
+          "package_name": "com.Aadhya.myplasticpays"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929019053170-svkvvaa3brsecdmm7p0cs7864dg86v53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpZJ9sxITnN2YTiXRKzuZZYCtCkBOcpE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929019053170-svkvvaa3brsecdmm7p0cs7864dg86v53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

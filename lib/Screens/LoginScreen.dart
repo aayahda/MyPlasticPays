@@ -1,16 +1,22 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import '../Components/textfield.dart';
 import 'MainScreen.dart';
 import 'RegistrationScreen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
 
+class _LoginScreenState extends State<LoginScreen> {
+  final _auth = FirebaseAuth.instance;
+  late String email;
+  late String password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.only(top:15,left: 25,right: 25),
@@ -24,9 +30,65 @@ class LoginScreen extends StatelessWidget {
             ),
             Text("We're super excited to have you on board!\n Login to track your progress",style: TextStyle(color: Colors.black54,fontSize: 17),),
             SizedBox(height: 35,),
-            TextInpField("Email", TextInputType.emailAddress, false),
+            // TextInpField("Email", TextInputType.emailAddress, false),
+            Container(
+              height: 60,
+              decoration: BoxDecoration(
+                  color: Color(0xffF5F6F8),
+                  borderRadius: BorderRadius.circular(15)),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Center(
+                  child: TextFormField(
+                    onChanged: (value){
+                      email=value;
+                    },
+                    // controller: ,
+                    obscureText: false,
+                    keyboardType: TextInputType.emailAddress,
+                    cursorColor: Color(0xff1c60ff),
+                    decoration: InputDecoration(
+                      hintStyle: TextStyle(
+                        color: Colors.black54,
+                      ),
+                      label: Text("Email"),
+                      border: InputBorder.none,
+
+                    ),
+                  ),
+                ),
+              ),
+            ),
             SizedBox(height: 15,),
-            TextInpField("Password", TextInputType.text, true),
+            Container(
+              height: 60,
+              decoration: BoxDecoration(
+                  color: Color(0xffF5F6F8),
+                  borderRadius: BorderRadius.circular(15)),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15),
+                child: Center(
+                  child: TextFormField(
+                    onChanged: (value){
+                      password=value;
+                    },
+                    // controller: ,
+                    obscureText: true,
+                    keyboardType: TextInputType.text,
+                    cursorColor: Color(0xff1c60ff),
+                    decoration: InputDecoration(
+                      hintStyle: TextStyle(
+                        color: Colors.black54,
+                      ),
+                      label: Text("Password"),
+                      border: InputBorder.none,
+
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            // TextInpField("Password", TextInputType.text, true),
             SizedBox(height: 200,),
             SizedBox(
               child: Center(
@@ -42,7 +104,36 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       color: Color(0xff1c60ff),
                     ),
-                    child: TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));}, child: Text("Login",style: TextStyle(color: Colors.white),))),
+                    child: TextButton(onPressed: ()async{
+                      try {
+                        final user = await _auth.signInWithEmailAndPassword(
+                            email: email, password: password);
+                        if (user != null) {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => MainScreen()));
+                        }
+                      }
+                      catch(e){print(e);
+                      showDialog(context: context,builder: (BuildContext context) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 300),
+                          child: AlertDialog(
+                            title: Center(child: const Text('User inexistent!')),
+                            content: Center(child: const Text('The user does not exists',textAlign: TextAlign.center,)),
+                            // actions: <Widget>[
+                            //   TextButton(
+                            //     child: const Text('Approve'),
+                            //     onPressed: () {
+                            //       Navigator.of(context).pop();
+                            //     },
+                            //   ),
+                            // ],
+                          ),
+                        );
+                      } );
+                      }
+
+                      }, child: Text("Login",style: TextStyle(color: Colors.white),))),
               ),
             ),
             SizedBox(height: 160,),
@@ -58,9 +149,11 @@ class LoginScreen extends StatelessWidget {
                           TextSpan(text: ' Register',
                               style: TextStyle(
                                   color: Colors.blueAccent, fontSize: 14),
-                              recognizer: TapGestureRecognizer()
+                              recognizer: new TapGestureRecognizer()
                                 ..onTap = () {
-                                  Navigator.pop(context);
+                            print("tapped");
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistrationScreen()));
+                                  // Navigator.pop(context);
                                 }
                           )
                         ]

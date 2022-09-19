@@ -5,6 +5,7 @@ import 'package:myplasticpays/Screens/Leaderboard.dart';
 import 'package:myplasticpays/Screens/PortfolioScreen.dart';
 import 'package:myplasticpays/Screens/QRScreen.dart';
 import 'package:myplasticpays/Screens/RewardsScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 class MainScreen extends StatefulWidget {
@@ -16,6 +17,19 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   late List<Widget> pageList;
+
+  // final _auth =FirebaseAuth.instance;
+  // FirebaseUser user = FirebaseAuth.instance.currentUser;
+
+  // void getCurrentUser()async{
+  //   final user =await _auth.currentUser();
+  //   if(user!=null){
+  //     loggedInUser =user;
+  //     print(loggedInUser.email)
+  //
+  //   }
+  // }
+
   void initState() {
     super.initState();
     pageList=<Widget>[

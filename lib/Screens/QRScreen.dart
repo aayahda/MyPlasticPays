@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:myplasticpays/Screens/RewardsScreen.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 void main() => runApp(const MaterialApp(home: MyHome()));
