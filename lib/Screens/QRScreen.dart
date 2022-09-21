@@ -7,11 +7,19 @@ import 'package:myplasticpays/Screens/RewardsScreen.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
+var point;
 void main() => runApp(const MaterialApp(home: MyHome()));
 
-class MyHome extends StatelessWidget {
+class MyHome extends StatefulWidget {
   const MyHome({Key? key}) : super(key: key);
+
+  @override
+  State<MyHome> createState() => _MyHomeState();
+}
+
+
+
+class _MyHomeState extends State<MyHome> {
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +47,11 @@ class QRScreen extends StatefulWidget {
 }
 
 class _QRScreenState extends State<QRScreen> {
+  final _firestore = FirebaseFirestore.instance;
   Barcode? result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
+
   @override
   void reassemble() {
     super.reassemble();
@@ -75,8 +85,53 @@ class _QRScreenState extends State<QRScreen> {
                            )
                        ),
                        child: Text("REDEEM NOW"),
-                       onPressed: (){
+                       onPressed: () async {
+                         final QuerySnapshot resultdb =
+                             await FirebaseFirestore.instance.collection('mpp').where('id', isEqualTo:
+                             result!.code).get();
+                         dynamic docRef= FirebaseFirestore.instance.collection('mpp').doc(result!.code).get().then((DocumentSnapshot doc){
+                           final data = doc.data() as Map<String, dynamic>;
+                           point=data["point"];
+                         });
+
+                         final List < DocumentSnapshot > documents = resultdb.docs;
+                         if (documents.length > 0) {
+                           //exists
+                           showDialog(context: context, builder:(context) {
+                             return Padding(
+                               padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 270),
+                               child: AlertDialog(
+                                 shape: RoundedRectangleBorder(
+                                     borderRadius: BorderRadius.circular(30)
+                                 ),
+                                 title: Center(child: Text("Congratulations",
+                                   style: TextStyle(fontSize: 15,
+                                       fontWeight: FontWeight.bold),)),
+                                 content: Column(
+                                   children: [
+                                     Container(
+                                       width: 100,
+                                       height: 100,
+                                       child:Image.asset("Assets/surprise.png"),
+                                     ),
+                                     SizedBox(height: 20),
+                                     Expanded(
+                                       child:Text('${point}',
+                                         style: TextStyle(fontSize: 14,color: Colors.black38),),
+                                     )
+                                   ],
+                                 ),
+                               ),
+                             );
+                             // Navigator.push(context, MaterialPageRoute(builder: (context)=>RewardsScreen()));
+                           },);
+                           FirebaseFirestore.instance.collection('mpp').doc(result!.code).delete();
+
+                         }
+                         else{
+
                          showDialog(context: context, builder:(context) {
+
                            return Padding(
                              padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 270),
                              child: AlertDialog(
@@ -93,15 +148,22 @@ class _QRScreenState extends State<QRScreen> {
                                      height: 100,
                                      child:Image.asset("Assets/surprise.png"),
                                    ),
-                                   SizedBox(height: 50),
-                                   Text("You have won 30 points",style: TextStyle(fontSize: 14,color: Colors.black38),)
+                                   SizedBox(height: 20),
+                                   Expanded(
+                                     child: Text('10 points',
+                                       style: TextStyle(fontSize: 14,color: Colors.black38),),
+                                   )
                                  ],
                                ),
                          ),
                            );
                         // Navigator.push(context, MaterialPageRoute(builder: (context)=>RewardsScreen()));
 
-                       },);}
+                       },);
+
+                         }
+
+                       }
                    ),)
                   //   Navigator.push(context, MaterialPageRoute(builder: (context)=>MainScreen()));
                     // Text(
@@ -261,7 +323,17 @@ class _QRScreenState extends State<QRScreen> {
     controller?.dispose();
     super.dispose();
   }
+  // Future<bool> doesIdAlreadyExist(String id) async {
+  //   final QuerySnapshot result = await FirebaseFirestore.instance
+  //       .collection('mpp')
+  //       .where('id', isEqualTo: id)
+  //       .limit(1)
+  //       .getDocuments();
+  //   final List<DocumentSnapshot> documents = result.documents;
+  //   return documents.length == 1;
+  // }
 }
+
 
 // GestureDetector(
 // onTap: () {
@@ -348,3 +420,6 @@ class _QRScreenState extends State<QRScreen> {
 // );
 // });
 //},
+
+
+// Text('Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
